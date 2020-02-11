@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <v-navigation-drawer v-model="drawer" app>
+        <v-navigation-drawer v-model="drawer" :width="325" app>
             <app-navigation-list></app-navigation-list>
         </v-navigation-drawer>
         <v-app-bar app color="indigo" dark>
@@ -8,7 +8,7 @@
             <v-toolbar-title>Application</v-toolbar-title>
         </v-app-bar>
         <v-content>
-            <v-container fluid fill-height>
+            <v-container fluid>
                 <slot></slot>
             </v-container>
         </v-content>

@@ -36,6 +36,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'AppNavigationList',
@@ -205,66 +206,74 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("v-treeview", {
-    attrs: {
-      dense: "",
-      activatable: "",
-      items: _vm.items,
-      "open-on-click": true,
-      open: _vm.open,
-      "item-key": "id"
-    },
-    scopedSlots: _vm._u([
-      {
-        key: "prepend",
-        fn: function(ref) {
-          var item = ref.item
-          var open = ref.open
-          return [
-            item.children && item.children.length > 0
-              ? _c("v-icon", [
-                  _vm._v(
-                    "\n            " +
-                      _vm._s(open ? "mdi-folder-open" : "mdi-folder") +
-                      "\n        "
-                  )
-                ])
-              : _vm._e()
-          ]
+  return _c(
+    "v-container",
+    [
+      _c("v-treeview", {
+        staticClass: "body-2",
+        attrs: {
+          dense: "",
+          items: _vm.items,
+          "open-on-click": true,
+          open: _vm.open,
+          "item-key": "id"
+        },
+        scopedSlots: _vm._u([
+          {
+            key: "prepend",
+            fn: function(ref) {
+              var item = ref.item
+              var open = ref.open
+              return [
+                item.children && item.children.length > 0
+                  ? _c("v-icon", { attrs: { size: "18" } }, [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(open ? "mdi-folder-open" : "mdi-folder") +
+                          "\n            "
+                      )
+                    ])
+                  : _vm._e()
+              ]
+            }
+          },
+          {
+            key: "label",
+            fn: function(props) {
+              return [
+                props.item.to
+                  ? [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "tree-view-link",
+                          attrs: { to: props.item.to }
+                        },
+                        [_vm._v(_vm._s(props.item.name))]
+                      )
+                    ]
+                  : [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(props.item.name) +
+                          "\n            "
+                      )
+                    ]
+              ]
+            }
+          }
+        ]),
+        model: {
+          value: _vm.tree,
+          callback: function($$v) {
+            _vm.tree = $$v
+          },
+          expression: "tree"
         }
-      },
-      {
-        key: "label",
-        fn: function(props) {
-          return [
-            props.item.to
-              ? [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "tree-view-link",
-                      attrs: { to: props.item.to }
-                    },
-                    [_vm._v(_vm._s(props.item.name))]
-                  )
-                ]
-              : [
-                  _vm._v(
-                    "\n            " + _vm._s(props.item.name) + "\n        "
-                  )
-                ]
-          ]
-        }
-      }
-    ]),
-    model: {
-      value: _vm.tree,
-      callback: function($$v) {
-        _vm.tree = $$v
-      },
-      expression: "tree"
-    }
-  })
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -294,7 +303,7 @@ var render = function() {
       _c(
         "v-navigation-drawer",
         {
-          attrs: { app: "" },
+          attrs: { width: 325, app: "" },
           model: {
             value: _vm.drawer,
             callback: function($$v) {
@@ -327,14 +336,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-content",
-        [
-          _c(
-            "v-container",
-            { attrs: { fluid: "", "fill-height": "" } },
-            [_vm._t("default")],
-            2
-          )
-        ],
+        [_c("v-container", { attrs: { fluid: "" } }, [_vm._t("default")], 2)],
         1
       ),
       _vm._v(" "),
@@ -367,8 +369,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 /* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../node_modules/vuetify-loader/lib/runtime/installComponents.js */ "./node_modules/vuetify-loader/lib/runtime/installComponents.js");
 /* harmony import */ var _node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VIcon */ "./node_modules/vuetify/lib/components/VIcon/index.js");
-/* harmony import */ var vuetify_lib_components_VTreeview__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VTreeview */ "./node_modules/vuetify/lib/components/VTreeview/index.js");
+/* harmony import */ var vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuetify/lib/components/VGrid */ "./node_modules/vuetify/lib/components/VGrid/index.js");
+/* harmony import */ var vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuetify/lib/components/VIcon */ "./node_modules/vuetify/lib/components/VIcon/index.js");
+/* harmony import */ var vuetify_lib_components_VTreeview__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vuetify/lib/components/VTreeview */ "./node_modules/vuetify/lib/components/VTreeview/index.js");
 
 
 
@@ -392,7 +395,8 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 
 
-_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4___default()(component, {VIcon: vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_5__["VIcon"],VTreeview: vuetify_lib_components_VTreeview__WEBPACK_IMPORTED_MODULE_6__["VTreeview"]})
+
+_node_modules_vuetify_loader_lib_runtime_installComponents_js__WEBPACK_IMPORTED_MODULE_4___default()(component, {VContainer: vuetify_lib_components_VGrid__WEBPACK_IMPORTED_MODULE_5__["VContainer"],VIcon: vuetify_lib_components_VIcon__WEBPACK_IMPORTED_MODULE_6__["VIcon"],VTreeview: vuetify_lib_components_VTreeview__WEBPACK_IMPORTED_MODULE_7__["VTreeview"]})
 
 
 /* hot reload */

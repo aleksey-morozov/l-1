@@ -1,27 +1,28 @@
 <template>
-    <v-treeview
-        dense
-        activatable
-        :items="items"
-        :open-on-click="true"
-        :open="open"
-        item-key="id"
-        v-model="tree"
-    >
-        <template v-slot:prepend="{ item, open }">
-            <v-icon v-if="item.children && item.children.length > 0">
-                {{ open ?  'mdi-folder-open' : 'mdi-folder' }}
-            </v-icon>
-        </template>
-        <template slot="label" slot-scope="props">
-            <template v-if="props.item.to">
-                <router-link class="tree-view-link" :to="props.item.to">{{ props.item.name }}</router-link>
+    <v-container>
+        <v-treeview class="body-2"
+            dense
+            :items="items"
+            :open-on-click="true"
+            :open="open"
+            item-key="id"
+            v-model="tree"
+        >
+            <template v-slot:prepend="{ item, open }">
+                <v-icon size="18" v-if="item.children && item.children.length > 0">
+                    {{ open ?  'mdi-folder-open' : 'mdi-folder' }}
+                </v-icon>
             </template>
-            <template v-else>
-                {{ props.item.name }}
+            <template slot="label" slot-scope="props">
+                <template v-if="props.item.to">
+                    <router-link class="tree-view-link" :to="props.item.to">{{ props.item.name }}</router-link>
+                </template>
+                <template v-else>
+                    {{ props.item.name }}
+                </template>
             </template>
-        </template>
-    </v-treeview>
+        </v-treeview>
+    </v-container>
 </template>
 
 <script>
