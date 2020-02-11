@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <v-app>
         <v-navigation-drawer v-model="drawer" app>
             <app-navigation-list></app-navigation-list>
         </v-navigation-drawer>
@@ -15,7 +15,7 @@
         <v-footer color="indigo" app>
             <span class="white--text">&copy; 2020</span>
         </v-footer>
-    </div>
+    </v-app>
 </template>
 
 <script>
