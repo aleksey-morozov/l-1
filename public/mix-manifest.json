@@ -1,6 +1,16 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/Hello.js": "/Hello.js",
-    "/Home.js": "/Home.js"
+    "/Credits.js": "/Credits.js",
+    "/Credits~EmissionAdd~EmissionEdit~Home~Loans~LoansAdd.js": "/Credits~EmissionAdd~EmissionEdit~Home~Loans~LoansAdd.js",
+    "/EmissionAdd.js": "/EmissionAdd.js",
+    "/EmissionEdit.js": "/EmissionEdit.js",
+    "/Home.js": "/Home.js",
+    "/Loans.js": "/Loans.js",
+    "/LoansAdd.js": "/LoansAdd.js",
+    "/vendors~EmissionEdit~Home.js": "/vendors~EmissionEdit~Home.js",
+    "/vendors~EmissionAdd~EmissionEdit~Home.js": "/vendors~EmissionAdd~EmissionEdit~Home.js",
+    "/vendors~EmissionAdd~EmissionEdit~Home~Loans.js": "/vendors~EmissionAdd~EmissionEdit~Home~Loans.js",
+    "/vendors~EmissionAdd~EmissionEdit~Home~Loans~LoansAdd.js": "/vendors~EmissionAdd~EmissionEdit~Home~Loans~LoansAdd.js",
+    "/vendors~Credits~EmissionAdd~EmissionEdit~Home~Loans~LoansAdd.js": "/vendors~Credits~EmissionAdd~EmissionEdit~Home~Loans~LoansAdd.js"
 }

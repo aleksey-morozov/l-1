@@ -1,11 +1,12 @@
-import Vue from 'vue'
-import Vuetify from 'vuetify/lib'
+import Vue from 'vue';
+import Vuetify from 'vuetify/lib';
+import ru from 'vuetify/es5/locale/ru';
 
 Vue.use(Vuetify);
 
 export default new Vuetify({
     icons: {
-        iconfont: 'md',  // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4'
+        iconfont: 'md',
     },
     theme: {
         dark: false,
@@ -17,5 +18,9 @@ export default new Vuetify({
             accent: "#8c9eff",
             error: "#b71c1c",
         },
+    },
+    lang: {
+        locales: { ru },
+        current: 'ru',
     },
 })
