@@ -7,6 +7,8 @@
             :open="open"
             item-key="id"
             v-model="tree"
+            activatable
+            :active="active"
         >
             <template v-slot:prepend="{ item, open }">
                 <v-icon size="18" v-if="item.children && item.children.length > 0">
@@ -38,10 +40,12 @@
             tree: [],
             open: [],
             items: treeStructure,
+            active: [],
         }),
         created() {
             if (this.viewId > 0) {
                 this.open = this.getOpenIds();
+                this.active = [this.viewId];
             }
         },
         methods: {
@@ -84,5 +88,6 @@
     .tree-view-link {
         color: rgba(0, 0, 0, 0.87);
         text-decoration: none;
+        display: block;
     }
 </style>

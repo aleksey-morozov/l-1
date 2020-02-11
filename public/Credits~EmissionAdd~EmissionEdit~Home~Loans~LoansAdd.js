@@ -37,6 +37,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'AppNavigationList',
@@ -49,12 +51,14 @@ __webpack_require__.r(__webpack_exports__);
     return {
       tree: [],
       open: [],
-      items: _services_navigationTreeStructure__WEBPACK_IMPORTED_MODULE_0__["default"]
+      items: _services_navigationTreeStructure__WEBPACK_IMPORTED_MODULE_0__["default"],
+      active: []
     };
   },
   created: function created() {
     if (this.viewId > 0) {
       this.open = this.getOpenIds();
+      this.active = [this.viewId];
     }
   },
   methods: {
@@ -154,7 +158,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.tree-view-link[data-v-8e2aeaa8] {\n    color: rgba(0, 0, 0, 0.87);\n    text-decoration: none;\n}\n", ""]);
+exports.push([module.i, "\n.tree-view-link[data-v-8e2aeaa8] {\n    color: rgba(0, 0, 0, 0.87);\n    text-decoration: none;\n    display: block;\n}\n", ""]);
 
 // exports
 
@@ -216,7 +220,9 @@ var render = function() {
           items: _vm.items,
           "open-on-click": true,
           open: _vm.open,
-          "item-key": "id"
+          "item-key": "id",
+          activatable: "",
+          active: _vm.active
         },
         scopedSlots: _vm._u([
           {
